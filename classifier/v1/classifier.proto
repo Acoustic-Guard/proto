@@ -19,6 +19,7 @@ message AudioFrameRequest {
     float sample_rate_hz = 6;
     float peak_db = 7;
     float avg_db = 8;
+    repeated int32 raw_audio = 9;
 }
 
 message ClassificationResponse {
