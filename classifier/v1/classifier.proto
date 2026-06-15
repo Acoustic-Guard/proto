@@ -7,23 +7,23 @@ option java_package = "com.acousticguard.hub.grpc.classifier.v1";
 option java_multiple_files = true;
 
 service AudioClassifier {
-    rpc Classify (AudioFrameRequest) returns (ClassificationResponse);
+  rpc Classify (AudioFrameRequest) returns (ClassificationResponse);
 }
 
 message AudioFrameRequest {
-    string sensor_id = 1;
-    int64 captured_at_ms = 2;
-    float latitude = 3;
-    float longitude = 4;
-    repeated float fft_bins = 5;
-    float sample_rate_hz = 6;
-    float peak_db = 7;
-    float avg_db = 8;
-    repeated int32 raw_audio = 9;
+  string sensor_id = 1;
+  int64 captured_at_ms = 2;
+  float latitude = 3;
+  float longitude = 4;
+  repeated float fft_bins = 5;
+  float sample_rate_hz = 6;
+  float peak_db = 7;
+  float avg_db = 8;
+  repeated int32 raw_audio = 9;
 }
 
 message ClassificationResponse {
-    string threat_type = 1; // Expected: "BACKGROUND", "UAV", "EXPLOSION"
-    float confidence = 2;
-    string model_ver = 3;
+  string threat_type = 1; // Expected: "BACKGROUND", "UAV", "EXPLOSION"
+  float confidence = 2;
+  string model_ver = 3;
 }
